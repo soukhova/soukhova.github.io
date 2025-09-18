@@ -1,0 +1,9 @@
+---
+title: "Pers_academic"
+---
+
+A home for my research. Currently, I'm a Postdoctoral Associate at Western University in Ontario, Canada.
+
+```{r}
+1 + 1
+```

@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: "Anastasia Soukhov"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: cv.qmd
+        text: CV
+      - href: publications.qmd
+        text: Publications
+      - href: projects.qmd
+        text: Projects
+
+format:
+  html:
+    theme: minty
+    css: styles.css
+    toc: true
+
+editor: visual
+

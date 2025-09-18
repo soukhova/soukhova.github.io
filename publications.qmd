@@ -1,0 +1,6 @@
+---
+title: "publications"
+format: html
+---
+
+Pubs!
