@@ -1,23 +1,93 @@
 [
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "publications",
+    "objectID": "R_highlights.html",
+    "href": "R_highlights.html",
+    "title": "Research Highlights",
     "section": "",
-    "text": "Pubs!"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site…\n\n1 + 1\n\n[1] 2"
+    "text": "Work in progress.\nBut a highlight is my dissertation:\nhttps://github.com/soukhova/Dissertation"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Pers_academic",
+    "title": "Home",
     "section": "",
-    "text": "A home for my research. Currently, I’m a Postdoctoral Associate at Western University in Ontario, Canada.\n\n1 + 1\n\n[1] 2"
+    "text": "Hi, I’m Anastasia Soukhov, a PhD in Geography from McMaster University with a background in transportation and civil engineering.\nThis is a home for my research. Currently, I’m a Postdoctoral Associate at Western University in Ontario, Canada working with the Human Environments Analysis Laboratory. My research focuses on:\n\nAccessibility and spatial interaction modeling\nBuilt environment and transportation\nSocial inequities and sustainability\nOpen science\n\nLearn more About Me,my Publications, and Research Highlights on this little site."
+  },
+  {
+    "objectID": "about_cv.html",
+    "href": "about_cv.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I am a researcher in Geography, interested in sustainable urban systems, transportation, and social equity. I use R, GIS, and spatial analysis methods to explore how built environments function and how to make them more equitable."
+  },
+  {
+    "objectID": "about_cv.html#academic-positions",
+    "href": "about_cv.html#academic-positions",
+    "title": "About Me",
+    "section": "Academic Positions",
+    "text": "Academic Positions\n\nPost Doctoral Associate, Western University, 2025-Present\nResearch Assistant\n\nMobilizing Justice, 2021–2025\nTRiP, McMaster University, 2019-2021\n\nSessional Instructor: Applied Spatial Statistics, Winter 2023\nTeaching Assistant (various GIS, Spatial Statistics, Transportation), 2020-2024"
+  },
+  {
+    "objectID": "about_cv.html#education",
+    "href": "about_cv.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\n\nPhD, Geography, McMaster University, 2021–2025\nMASc, Transportation Engineering, McMaster University, 2021\nBEng, Civil Engineering & Society (Min. GIS), McMaster University, 2020"
+  },
+  {
+    "objectID": "about_cv.html#research-presentations",
+    "href": "about_cv.html#research-presentations",
+    "title": "About Me",
+    "section": "Research Presentations",
+    "text": "Research Presentations\nBrowse the interactive map of my research presentations, seminars, workshops, and lightning talks:"
+  },
+  {
+    "objectID": "about_cv.html#questions-lets-connect",
+    "href": "about_cv.html#questions-lets-connect",
+    "title": "About Me",
+    "section": "Questions? Let’s Connect!",
+    "text": "Questions? Let’s Connect!\n\nEmail: asoukhov(at)uwo.ca\nGitHub: soukhova\nORCID: 0000-0003-4371-4831\nLinkedIn\n\nInterested in the details? Download the full CV [PDF] (Sept 2025)"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "List of Publications, with links to their repos and final downloadable PDFs:"
+  },
+  {
+    "objectID": "publications.html#section",
+    "href": "publications.html#section",
+    "title": "Publications",
+    "section": "2025",
+    "text": "2025\n\nExploring Mobility of Care with Measures of Accessibility\nSoukhov, A and Nicholas Mooney and Léa Ravensbergen. Journal of Transport Geography. PDF\nSearching for Standards of Fairness in the Transportation Literature\nSoukhov, A and Ignacio Tiznado Aitken and Matthew Palm and Steven Farber and Antonio Páez. NA. PDF"
+  },
+  {
+    "objectID": "publications.html#section-1",
+    "href": "publications.html#section-1",
+    "title": "Publications",
+    "section": "2024",
+    "text": "2024\n\nMultimodal Spatial Availability: A Singly-Constrained Measure of Accessibility Considering Multiple Modes\nSoukhov, A and Javier Tarriño-Ortiz and Julio A. Soria-Lara and Antonio Páez. PLOS ONE. PDF"
+  },
+  {
+    "objectID": "publications.html#section-2",
+    "href": "publications.html#section-2",
+    "title": "Publications",
+    "section": "2023",
+    "text": "2023\n\nIntroducing Spatial Availability, a Singly-Constrained Measure of Competitive Accessibility PLOS ONE\nSoukhov, A and Antonio Paez and Christopher D. Higgins and Moataz Mohamed. PLOS ONE. PDF\nTTS2016R: A Data Set to Study Population and Employment Patterns from the 2016 Transportation Tomorrow Survey in the Greater Golden Horseshoe Area, Ontario, Canada\nSoukhov, A and Antonio Páez. Environment and Planning B: Urban Analytics and City Science. PDF"
+  },
+  {
+    "objectID": "publications.html#section-3",
+    "href": "publications.html#section-3",
+    "title": "Publications",
+    "section": "2022",
+    "text": "2022\n\nElectric Mobility Emission Reduction Policies: A Multi-Objective Optimization Assessment Approach\nSoukhov, A and Ahmed Foda and Moataz Mohamed. Energies. PDF\nOccupancy and GHG Emissions: Thresholds for Disruptive Transportation Modes and Emerging Technologies\nSoukhov, A and Moataz Mohamed. Transportation Research Part D: Transport and Environment. PDF"
+  },
+  {
+    "objectID": "publications.html#undated",
+    "href": "publications.html#undated",
+    "title": "Publications",
+    "section": "Undated",
+    "text": "Undated"
   }
 ]
