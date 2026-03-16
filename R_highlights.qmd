@@ -1,0 +1,88 @@
+---
+title: "Research Highlights"
+format: html
+---
+
+## PhD Dissertation
+
+### *Reuniting Accessibility Measures with Spatial Interaction Principles*
+
+🏆 **Winner, 2026 Best PhD Dissertation Award**\
+*Transportation Geography Specialty Group, American Association of Geographers*
+
+🔗 **Reproducible and Open dissertation repository (PDF, code, figures):**\
+https://github.com/soukhova/Dissertation
+
+------------------------------------------------------------------------
+
+My monograph-style dissertation reconnects accessibility measures with their theoretical roots in spatial interaction modelling.
+
+I argue that widely used Hansen-type accessibility measures (Hansen, 1959) were originally grounded in spatial interaction theory, but have since drifted away from those foundations. This work reunites them by introducing **proportional allocation mechanisms**, inspired by the balancing factors of spatial interaction models.
+
+**What does this achieve?**\
+Accessibility measures with **consistent, interpretable units**, and a **unified framework** that integrates traditional, competitive, and interaction-based approaches.
+
+### Core contributions
+
+-   Introduces a **family of accessibility measures** grounded in spatial interaction principles
+-   Clarifies the distinction between *potential accessibility* and *realized interaction*
+-   Restores meaningful units (e.g., accessible opportunities or population) to accessibility metrics
+-   Demonstrates how constrained measures improve interpretability and comparability
+
+The early chapters develop the theoretical framework, and the final chapters apply these ideas empirically, focusing on **Parkland provision and accessibility in the City of Toronto**.
+
+------------------------------------------------------------------------
+
+While the dissertation is a stand-alone work, it is based on the following three published papers:
+
+### 1. A family of accessibility measures derived from spatial interaction principles
+
+🔗 Paper: [https://osf.io/a9dxb_v1](https://osf.io/a9dxb_v1)\
+🔗 Repo: [https://github.com/soukhova/family-accessibility-measures](https://github.com/soukhova/family-accessibility-measures)
+
+This paper develops the **theoretical foundation** underlying the dissertation.
+
+Rather than proposing a single accessibility metric, we introduce a *family* of measures derived from entropy-based spatial interaction principles. We formalize four cases:
+
+-   **Unconstrained** (Hansen-type accessibility)
+-   **Total constrained**
+-   **Singly constrained** (linked to 2SFCA / competitive accessibility)
+-   **Doubly constrained** (realized interaction or “access”)
+
+**Why this matters:**
+
+Although accessibility is widely used, many measures lack clear units and are difficult to interpret. By grounding accessibility in spatial interaction modelling, these measures recover meaningful quantities (e.g., reachable opportunities or accessible population) instead of abstract index values.
+
+These measures are designed to support planners, geographers, and policy analysts who need accessibility metrics that are **intuitive, comparable, and actionable**. We are also integrating them into the `{accessibility}` R package to facilitate applied use.
+
+------------------------------------------------------------------------
+
+### 2. Spatial availability & multimodal spatial availability
+
+🔗Spatial availability papers (PLOS ONE):
+
+Introducing spatial availability: [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0299077](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0299077)\
+Multimodal extension: [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0278468](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0278468)
+
+🔗 Repos:
+
+[https://github.com/soukhova/Spatial-Availability-Measure](https://github.com/soukhova/Spatial-Availability-Measure)\
+[https://github.com/soukhova/multimodal-spatial-availability](https://github.com/soukhova/multimodal-spatial-availability)
+
+Spatial availability is a **singly constrained competitive accessibility measure** designed for contexts where opportunities are *exhaustible* or *competitive*.
+
+In contrast to conventional (unconstrained) accessibility measures, which can **double-count opportunities**; spatial availability constrains accessibility values so they sum to a known total (e.g., the total number of jobs or services in a region). Each zonal value can therefore be interpreted as a **proportion of total opportunities**.
+
+We extend this framework to the **multimodal case**, allowing accessibility to be compared meaningfully across modes.
+
+**Key empirical insight (Madrid case study):**
+
+-   Outside the city centre, car users have higher spatial availability due to greater travel ranges
+-   Within the city centre (and especially inside the Low Emission Zone) **non-car modes exhibit higher spatial availability**
+-   These patterns align closely with policy design and lived travel constraints
+
+Multimodal spatial availability is particularly useful when analysts want to:
+
+-   Compare accessibility across modes or population groups
+-   Avoid inflated or misleading accessibility values
+-   Evaluate policy interventions such as Low Emission Zones

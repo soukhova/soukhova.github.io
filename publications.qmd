@@ -1,6 +1,137 @@
 ---
-title: "publications"
+title: "Publications"
 format: html
 ---
 
-Pubs!
+List of first-author publications, with a short highlight, links to their Repos and PDFs:
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, results='asis'}
+library(RefManageR)
+library(dplyr)
+
+# --- Helpers -------------------------------------------------------------
+
+# Vector-safe cleaner for display text; flattens list-cols and removes braces
+clean_text_vec <- function(x) {
+  if (is.list(x)) {
+    x <- vapply(
+      x,
+      function(el) {
+        if (is.null(el) || length(el) == 0) return("")
+        paste(as.character(el), collapse = "; ")
+      },
+      character(1)
+    )
+  }
+  x <- as.character(x)
+  x[is.na(x)] <- ""
+  # Remove double braces and then any leftover single braces for clean display
+  x <- gsub("\\{\\{|\\}\\}", "", x, perl = TRUE)
+  x <- gsub("[{}]", "", x, perl = TRUE)
+  x
+}
+
+# Safe coalesce for two possibly list/char columns
+coalesce_chr <- function(a, b) {
+  a <- clean_text_vec(a); b <- clean_text_vec(b)
+  out <- ifelse(nzchar(a), a, b)
+  out[is.na(out)] <- ""
+  out
+}
+
+# Proper HTML anchor (clickable) with a label
+fmt_link <- function(url, label) {
+  if (length(url) == 0) return("")
+  url <- clean_text_vec(url)
+  ifelse(
+    nzchar(url),
+    sprintf("<a href=\"%s\" target=\"_blank\" rel=\"noopener\">%s</a>", url, label),
+    ""
+  )
+}
+
+# Build link string showing ONLY: Repo · Article
+build_links_repo_article <- function(repo, url) {
+  repoL <- fmt_link(repo, "Repo")
+  urlL  <- fmt_link(url,  "Article")
+  parts <- cbind(repoL, urlL)
+  apply(parts, 1, function(row) {
+    row <- row[nzchar(row)]
+    if (length(row) == 0) "" else paste(row, collapse = " · ")
+  })
+}
+
+# --- Read BibTeX ----------------------------------------------------------
+
+peer <- ReadBib("data/peer-reviewed-pubs.bib")
+peer_df <- as.data.frame(peer, stringsAsFactors = FALSE)
+
+# Bold your name placeholder (then strip any residual braces for display)
+peer_df$author <- clean_text_vec(peer_df$author)
+peer_df$author <- gsub(
+  "SoukhovBold",
+  "<strong>Soukhov, A.</strong>",
+  peer_df$author,
+  perl = TRUE
+)
+
+# Build display columns (robust to list-cols and missing fields)
+peer_df <- peer_df %>%
+  mutate(
+    title      = clean_text_vec(title),
+    journal    = coalesce_chr(journal, journaltitle),
+    highlight  = clean_text_vec(highlight),
+    repo_c     = clean_text_vec(repo),
+    url_c      = clean_text_vec(url),
+    links      = build_links_repo_article(repo_c, url_c),
+    year       = suppressWarnings(as.integer(clean_text_vec(year)))
+  ) %>%
+  arrange(desc(year), desc(title))
+
+# --- Output ---------------------------------------------------------------
+
+years <- sort(unique(peer_df$year[!is.na(peer_df$year)]), decreasing = TRUE)
+has_undated <- any(is.na(peer_df$year))
+
+for (yr in years) {
+  cat("## ", yr, "\n\n", sep = "")
+  pubs <- peer_df %>% filter(year == yr)
+
+  for (i in seq_len(nrow(pubs))) {
+    # Main bullet line
+    cat(
+      "- **", pubs$title[i], "**  \n",
+      "  ", pubs$author[i],
+      if (nzchar(pubs$journal[i])) paste0(". *", pubs$journal[i], "*.") else ".",
+      if (nzchar(pubs$links[i])) paste0(" ", pubs$links[i]) else "",
+      "\n",
+      sep = ""
+    )
+    # Sub-bullet for highlight (only if present)
+    if (nzchar(pubs$highlight[i])) {
+      cat("  - ", pubs$highlight[i], "\n", sep = "")
+    }
+    cat("\n")
+  }
+}
+
+# Undated section at the end (if any)
+if (has_undated) {
+  cat("## Undated\n\n")
+  pubs <- peer_df %>% filter(is.na(year))
+  for (i in seq_len(nrow(pubs))) {
+    cat(
+      "- **", pubs$title[i], "**  \n",
+      "  ", pubs$author[i],
+      if (nzchar(pubs$journal[i])) paste0(". *", pubs$journal[i], "*.") else ".",
+      if (nzchar(pubs$links[i])) paste0(" ", pubs$links[i]) else "",
+      "\n",
+      sep = ""
+    )
+    if (nzchar(pubs$highlight[i])) {
+      cat("  - ", pubs$highlight[i], "\n", sep = "")
+    }
+    cat("\n")
+  }
+}
+```

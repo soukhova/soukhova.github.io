@@ -7,20 +7,20 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
-      - href: cv.qmd
-        text: CV
+      - href: about_cv.qmd
+        text: About Me
       - href: publications.qmd
         text: Publications
-      - href: projects.qmd
-        text: Projects
+      - href: R_highlights.qmd
+        text: Research Highlights
 
 format:
   html:
     theme: minty
     css: styles.css
-    toc: true
+    toc: true          # optional: table of contents
+    toc-depth: 2
+    code-fold: true    # fold long code blocks
 
 editor: visual
 

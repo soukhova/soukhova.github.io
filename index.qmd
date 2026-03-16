@@ -1,9 +1,17 @@
 ---
-title: "Pers_academic"
+title: "Home"
 ---
 
-A home for my research. Currently, I'm a Postdoctoral Associate at Western University in Ontario, Canada.
+I'm Anastasia Soukhov, a PhD in Geography from McMaster University (Canada) with degrees in transportation and civil engineering.
 
-```{r}
-1 + 1
-```
+This is a little home for comments on my research. Currently, I'm a Postdoctoral Associate at Western University in London Ontario, Canada working with the [**H**uman **E**nvironments **A**nalysis **L**aboratory](https://theheal.ca/about/). My research focuses on:
+
+-   Accessibility and spatial interaction modeling
+
+-   Built environment and transportation
+
+-   Social inequities, inequality and sustainability
+
+-   Open science
+
+Learn more [**About Me**](about.qmd), my [**Publications**](#0)**,** and [**Research Highlights**](#0).

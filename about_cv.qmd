@@ -1,0 +1,94 @@
+---
+title: "About Me"
+---
+
+I am a researcher in Geography, interested in sustainable urban systems, transportation, and social equity. I use R, GIS, and spatial analysis methods to explore how built environments function and how to make them more equitable.
+
+## Academic Positions
+
+-   Currently: Post Doctoral Associate, Western University, 2025-Ongoing. Research funded under the [Western University PostDoctoral Fellowship Program](https://www.uwo.ca/research/funding/students-trainees/postdoctoral-fellows.html).
+-   Research Assistant
+    -   [Mobilizing Justice](https://mobilizingjustice.ca/), 2021–2025
+    -   Transit Research Informed Practice (TRiP) lab, McMaster University, 2019-2021 *Cost-effectiveness, GHG abatement analysis, and stakeholder engagement of EV, alternative fuel, and transit decarbonization policies*
+-   Sessional Instructor: [Applied Spatial Statistics](https://paezha.github.io/spatial-analysis-r/), Winter 2023 (check out the Open Education Resources!)
+-   Teaching Assistant (various GIS, Spatial Statistics, Transportation, Sustainability, etc.), 2020-2024
+
+## Education
+
+-   PhD, Geography, McMaster University, Completed: 2025
+-   MASc, Transportation Engineering, McMaster University, Completed: 2021
+-   BEng, Civil Engineering & Society (Min. Geographic Information Systems) with a placement in the private and public sector, McMaster University, Completed: 2020
+
+## Research Presentations
+
+Browse the interactive map of my research presentations, seminars, workshops, and lightning talks (Updated Sept 2025):
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(leaflet)
+library(readr)
+library(dplyr)
+
+# Read CSV
+talks <- read_csv("data/talks.csv") |> 
+  filter(!is.na(Lat) & !is.na(Long))
+
+# Define icons for each 'What' type
+icons <- awesomeIcons(
+  icon = case_when(
+    talks$What == "Presentation" ~ "star",
+    talks$What == "Workshop" ~ "cog",
+    talks$What == "Seminar" ~ "graduation-cap",
+    talks$What == "Lightning presentation" ~ "bolt",
+    TRUE ~ "circle"
+  ),
+  iconColor = "white",
+  markerColor = case_when(
+    talks$What == "Presentation" ~ "blue",
+    talks$What == "Workshop" ~ "red",
+    talks$What == "Seminar" ~ "green",
+    talks$What == "Lightning presentation" ~ "purple",
+    TRUE ~ "gray"
+  ),
+  library = "fa"
+)
+
+# Create leaflet map with clustering and legend
+leaflet(talks) %>%
+  addTiles() %>%
+  addAwesomeMarkers(
+    ~Long, ~Lat,
+    icon = icons,
+    popup = ~paste0(
+      "<strong>Title:</strong> ", R_Title, "<br>",
+      "<strong>Year:</strong> ", Years, "<br>",
+      "<strong>Organization:</strong> ", Organization, "<br>",
+      "<strong>Where:</strong> ", Where, "<br>",
+      "<strong>Role:</strong> ", Role, "<br>",
+      "<strong>Type:</strong> ", What
+    ),
+    clusterOptions = markerClusterOptions()
+  ) %>%
+  addLegend(
+    position = "topright",
+    colors = c("dodgerblue", "#CD0000", "forestgreen", "#DA70D6"),
+    labels = c(
+      "<i class='fa fa-star'></i> Presentation",
+      "<i class='fa fa-cog'></i> Workshop",
+      "<i class='fa fa-graduation-cap'></i> Seminar",
+      "<i class='fa fa-bolt'></i> Lightning talk"
+    ),
+    opacity = 1,
+    title = NULL,  # remove legend title
+    labFormat = labelFormat(html = TRUE)
+  )
+
+
+```
+
+## Interested in more details?
+
+-   GitHub: [soukhova](https://github.com/soukhova)
+-   ORCID: [0000-0003-4371-4831](https://orcid.org/0000-0003-4371-4831)
+-   [LinkedIn](https://www.linkedin.com/in/anastasia-soukhov-b4ab09111/)
+
+Download the full CV [\[PDF\]](data/cv.pdf) (Updated Sept 2025)
